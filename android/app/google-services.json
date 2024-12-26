@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "64123065377",
+    "project_id": "fundorex-59fbf",
+    "storage_bucket": "fundorex-59fbf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64123065377:android:c501be7d7360744b41bf60",
+        "android_client_info": {
+          "package_name": "com.xgenious.funderox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "64123065377-5klut9r7o08d7ou6fcruvdbmqt7msci6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.xgenious.funderox",
+            "certificate_hash": "30a06d5b7db695bae46e802ba55c98cff7174e11"
+          }
+        },
+        {
+          "client_id": "64123065377-uqbt36noeetncl1idurb3tjiem5nupem.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.xgenious.funderox",
+            "certificate_hash": "6bcce48d491e775a0596cc33bba731e29833a5ca"
+          }
+        },
+        {
+          "client_id": "64123065377-hsf4a2isobd8vriurvfb4mvsdvsvc90e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDPfOIVig3TmCSw-wgiCMAfNntfTcXDmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "64123065377-hsf4a2isobd8vriurvfb4mvsdvsvc90e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

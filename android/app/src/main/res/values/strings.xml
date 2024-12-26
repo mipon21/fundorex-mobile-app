@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">fundorex</string>
+    <string name="facebook_app_id">592449502671371</string>
+    <string name="fb_login_protocol_scheme">fb592449502671371</string>
+    <string name="facebook_client_token">be00299e231af5384192ae460a0db790</string>
+</resources>
