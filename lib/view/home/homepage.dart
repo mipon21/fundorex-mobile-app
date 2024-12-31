@@ -108,7 +108,7 @@ class _HomepageState extends State<Homepage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CommonHelper().titleCommon("Hello! 👋"),
-                          CommonHelper().titleCommon("Welcome to OnHelping Hand"),
+                          CommonHelper().titleCommon("Welcome to OnHelpingHand"),
                         ],
                       ),
                     ),
