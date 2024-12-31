@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fundorex/helper/extension/string_extension.dart';
-import 'package:fundorex/view/utils/web_view.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '/helper/extension/context_extension.dart';
 import 'constant_colors.dart';
@@ -51,51 +51,63 @@ class TacPp extends StatelessWidget {
             maxLines: 4,
             overflow: TextOverflow.ellipsis,
             text: TextSpan(
-                text: "${'I agree to'.tr()} ",
-                style: context.titleMedium?.copyWith(
-                  color: cc.black5,
-                  fontWeight: FontWeight.w400,
+              text: "${'I agree to'.tr()} ",
+              style: context.titleMedium?.copyWith(
+                color: cc.black5,
+                fontWeight: FontWeight.w400,
+              ),
+              children: [
+                TextSpan(
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = tData.isEmpty
+                        ? null
+                        : () async {
+                            final Uri url = Uri.parse(tData);
+                            if (await canLaunchUrl(url)) {
+                              await launchUrl(
+                                url,
+                                mode: LaunchMode.externalApplication,
+                              );
+                            } else {
+                              print('Could not launch $tData');
+                            }
+                          },
+                  text: tTitle,
+                  style: tData.isNotEmpty
+                      ? context.titleMedium?.copyWith(
+                          color: cc.primaryColor,
+                          fontWeight: FontWeight.w600,
+                        )
+                      : null,
                 ),
-                children: [
-                  TextSpan(
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = tData.isEmpty
-                            ? null
-                            : () {
-                                FocusScope.of(context).unfocus();
-                                Navigator.of(context).pushNamed(
-                                    WebViewScreen.routeName,
-                                    arguments: [tTitle, tData]);
-                              },
-                      text: tTitle,
-                      style: tData.isNotEmpty
-                          ? context.titleMedium?.copyWith(
-                              color: cc.primaryColor,
-                              fontWeight: FontWeight.w600)
-                          : null),
-                  TextSpan(
-                    text: " ${'and'.tr()} ",
-                  ),
-                  TextSpan(
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = pData.isEmpty
-                            ? null
-                            : () {
-                                FocusScope.of(context).unfocus();
-                                Navigator.of(context).pushNamed(
-                                    WebViewScreen.routeName,
-                                    arguments: [
-                                      pTitle,
-                                      pData,
-                                    ]);
-                              },
-                      text: pTitle.tr(),
-                      style: pData.isNotEmpty
-                          ? context.titleMedium?.copyWith(
-                              color: cc.primaryColor,
-                              fontWeight: FontWeight.w600)
-                          : null),
-                ]),
+                TextSpan(
+                  text: " ${'and'.tr()} ",
+                ),
+                TextSpan(
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = pData.isEmpty
+                        ? null
+                        : () async {
+                            final Uri url = Uri.parse(pData);
+                            if (await canLaunchUrl(url)) {
+                              await launchUrl(
+                                url,
+                                mode: LaunchMode.externalApplication,
+                              );
+                            } else {
+                              print('Could not launch $pData');
+                            }
+                          },
+                  text: pTitle.tr(),
+                  style: pData.isNotEmpty
+                      ? context.titleMedium?.copyWith(
+                          color: cc.primaryColor,
+                          fontWeight: FontWeight.w600,
+                        )
+                      : null,
+                ),
+              ],
+            ),
           ),
         ),
       ],

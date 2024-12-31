@@ -24,12 +24,12 @@ class DonateService with ChangeNotifier {
 
   var userEnteredNameWhileDonating;
   var userEnteredEmailWhileDonating;
-  String dTC = "";
-  String dPP = "";
-  String eTC = "";
-  String ePP = "";
-  String sTC = "";
-  String sPP = "";
+  String dTC = "https://www.onhelpinghand.us/p/terms-conditions.html";
+  String dPP = "https://www.onhelpinghand.us/p/privacy-policy_14.html";
+  String eTC = "https://www.onhelpinghand.us/p/terms-conditions.html";
+  String ePP = "https://www.onhelpinghand.us/p/privacy-policy_14.html";
+  String sTC = "https://www.onhelpinghand.us/p/terms-conditions.html";
+  String sPP = "https://www.onhelpinghand.us/p/privacy-policy_14.html";
 
   bool isloading = false;
 
@@ -236,12 +236,12 @@ class DonateService with ChangeNotifier {
       var jsonData = jsonDecode(response.body);
       log(response.body.toString());
       chargeDonateFrom = jsonData['donation_charge_from'];
-      dTC = jsonData['donation_terms_and_conditions']?.toString() ?? "";
-      dPP = jsonData['donation_privacy_policy']?.toString() ?? "";
-      eTC = jsonData['event_terms_and_conditions']?.toString() ?? "";
-      ePP = jsonData['event_privacy_policy']?.toString() ?? "";
-      sTC = jsonData['register_terms_and_conditions']?.toString() ?? "";
-      sPP = jsonData['register_privacy_policy']?.toString() ?? "";
+      //dTC = jsonData['donation_terms_and_conditions']?.toString() ?? "";
+      //dPP = jsonData['donation_privacy_policy']?.toString() ?? "";
+      //eTC = jsonData['event_terms_and_conditions']?.toString() ?? "";
+      //ePP = jsonData['event_privacy_policy']?.toString() ?? "";
+      //sTC = jsonData['register_terms_and_conditions']?.toString() ?? "";
+      //sPP = jsonData['register_privacy_policy']?.toString() ?? "";
       allowCustomTip = jsonData['allow_user_to_add_custom_tip_in_donation'];
       transactionFee = num.tryParse(
           jsonData['transaction_minimum_charge_amount'].toString());
