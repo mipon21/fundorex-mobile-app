@@ -316,85 +316,88 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(
                           height: 30,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Expanded(
-                                child: Container(
-                              height: 1,
-                              color: cc.greyFive,
-                            )),
-                            Container(
-                              width: 40,
-                              alignment: Alignment.center,
-                              margin: const EdgeInsets.only(bottom: 25),
-                              child: Text(
-                                ln.getString("OR"),
-                                style: TextStyle(
-                                    color: cc.greyPrimary,
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                            ),
-                            Expanded(
-                                child: Container(
-                              height: 1,
-                              color: cc.greyFive,
-                            )),
-                          ],
-                        ),
+                        // Row(
+                        //   mainAxisAlignment: MainAxisAlignment.center,
+                        //   crossAxisAlignment: CrossAxisAlignment.center,
+                        //   children: [
+                        //     Expanded(
+                        //         child: Container(
+                        //       height: 1,
+                        //       color: cc.greyFive,
+                        //     )),
+
+                        //     //Upcoming Google And Fb Feature 
+
+                        //     // Container(
+                        //     //   width: 40,
+                        //     //   alignment: Alignment.center,
+                        //     //   margin: const EdgeInsets.only(bottom: 25),
+                        //     //   child: Text(
+                        //     //     ln.getString("OR"),
+                        //     //     style: TextStyle(
+                        //     //         color: cc.greyPrimary,
+                        //     //         fontSize: 17,
+                        //     //         fontWeight: FontWeight.w600),
+                        //     //   ),
+                        //     // ),
+                        //     // Expanded(
+                        //     //     child: Container(
+                        //     //   height: 1,
+                        //     //   color: cc.greyFive,
+                        //     // )),
+                        //   ],
+                        // ),
 
                         // login with google, facebook button ===========>
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Consumer<GoogleSignInService>(
-                          builder: (context, gProvider, child) => InkWell(
-                              onTap: () {
-                                if (gProvider.isloading == false) {
-                                  gProvider.googleLogin(context);
-                                }
-                              },
-                              child: LoginHelper().commonButton(
-                                  'assets/icons/google.png',
-                                  ln.getString("Sign in with Google"),
-                                  isloading: gProvider.isloading == false
-                                      ? false
-                                      : true)),
-                        ),
-                        if (Platform.isIOS) ...[
-                          const SizedBox(height: 20),
-                          Consumer<AppleSignInService>(
-                            builder: (context, gProvider, child) => InkWell(
-                                onTap: () async {
-                                  if (gProvider.isloading == false) {
-                                    gProvider.setLoadingTrue();
-                                    await gProvider
-                                        .appleLogin(context, autoLogin: true)
-                                        .then((value) async {
-                                      if (value == true) {
-                                        // Navigator.of(context).pop();
-                                        await Provider.of<ProfileService>(
-                                                context,
-                                                listen: false)
-                                            .fetchData();
-                                        context.popTrue;
-                                      }
-                                    }).onError((error, stackTrace) =>
-                                            gProvider.setLoadingFalse());
-                                    gProvider.setLoadingFalse();
-                                  }
-                                },
-                                child: LoginHelper().commonButton(
-                                    'assets/icons/apple.png',
-                                    ln.getString("Sign in with Apple"),
-                                    isloading: gProvider.isloading == false
-                                        ? false
-                                        : true)),
-                          )
-                        ],
-                        const SizedBox(height: 20),
+                        // const SizedBox(
+                        //   height: 20,
+                        // ),
+                        // Consumer<GoogleSignInService>(
+                        //   builder: (context, gProvider, child) => InkWell(
+                        //       onTap: () {
+                        //         if (gProvider.isloading == false) {
+                        //           gProvider.googleLogin(context);
+                        //         }
+                        //       },
+                        //       child: LoginHelper().commonButton(
+                        //           'assets/icons/google.png',
+                        //           ln.getString("Sign in with Google"),
+                        //           isloading: gProvider.isloading == false
+                        //               ? false
+                        //               : true)),
+                        // ),
+                        // if (Platform.isIOS) ...[
+                        //   const SizedBox(height: 20),
+                        //   Consumer<AppleSignInService>(
+                        //     builder: (context, gProvider, child) => InkWell(
+                        //         onTap: () async {
+                        //           if (gProvider.isloading == false) {
+                        //             gProvider.setLoadingTrue();
+                        //             await gProvider
+                        //                 .appleLogin(context, autoLogin: true)
+                        //                 .then((value) async {
+                        //               if (value == true) {
+                        //                 // Navigator.of(context).pop();
+                        //                 await Provider.of<ProfileService>(
+                        //                         context,
+                        //                         listen: false)
+                        //                     .fetchData();
+                        //                 context.popTrue;
+                        //               }
+                        //             }).onError((error, stackTrace) =>
+                        //                     gProvider.setLoadingFalse());
+                        //             gProvider.setLoadingFalse();
+                        //           }
+                        //         },
+                        //         child: LoginHelper().commonButton(
+                        //             'assets/icons/apple.png',
+                        //             ln.getString("Sign in with Apple"),
+                        //             isloading: gProvider.isloading == false
+                        //                 ? false
+                        //                 : true)),
+                        //   )
+                        // ],
+                        // const SizedBox(height: 20),
                         // Consumer<FacebookLoginService>(
                         //   builder: (context, fProvider, child) => InkWell(
                         //     onTap: () {
