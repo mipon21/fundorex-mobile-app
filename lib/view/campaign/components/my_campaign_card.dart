@@ -17,7 +17,7 @@ import '../../utils/constant_colors.dart';
 
 class MyCampaignCard extends StatelessWidget {
   const MyCampaignCard({
-    Key? key,
+    super.key,
     required this.imageLink,
     required this.title,
     required this.width,
@@ -30,7 +30,7 @@ class MyCampaignCard extends StatelessWidget {
     required this.categoryId,
     required this.endDate,
     required this.faq,
-  }) : super(key: key);
+  });
 
   final campaignId;
   final imageLink;

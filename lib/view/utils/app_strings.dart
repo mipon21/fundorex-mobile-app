@@ -336,7 +336,7 @@ var appStrings = {
   "Apple id revoked successfully": "Apple id revoked successfully",
   "Apple id revoke failed": "Apple id revoke failed",
   "Hello! 👋": "Hello! 👋",
-  "Welcome to Fundorex": "Welcome to Fundorex",
+  "Welcome to OnHealping Hand": "Welcome to OnHealping Hand",
   "I agree to": "I agree to",
   "the terms & condition": "the terms & condition",
   "and": "and",

@@ -13,13 +13,12 @@ import 'package:provider/provider.dart';
 
 class EmailVerifyPage extends StatefulWidget {
   const EmailVerifyPage(
-      {Key? key,
+      {super.key,
       required this.email,
       required this.pass,
       required this.token,
       required this.userId,
-      required this.countryId})
-      : super(key: key);
+      required this.countryId});
 
   final email;
   final pass;

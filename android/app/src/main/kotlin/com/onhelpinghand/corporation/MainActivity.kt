@@ -1,4 +1,4 @@
-package com.xgenious.funderox
+package com.onhelpinghand.corporation
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterFragmentActivity;

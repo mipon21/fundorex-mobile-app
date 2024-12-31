@@ -1,8 +1,6 @@
 import 'package:fundorex/helper/extension/context_extension.dart';
-import 'package:fundorex/service/bottom_nav_service.dart';
 import 'package:fundorex/service/create_campaign_service.dart';
 import 'package:fundorex/service/profile_service.dart';
-import 'package:fundorex/view/intro/splash.dart';
 import 'package:fundorex/view/utils/others_helper.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';

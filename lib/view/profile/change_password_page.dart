@@ -8,7 +8,7 @@ import 'package:fundorex/view/utils/common_styles.dart';
 import 'package:provider/provider.dart';
 
 class ChangePasswordPage extends StatefulWidget {
-  const ChangePasswordPage({Key? key}) : super(key: key);
+  const ChangePasswordPage({super.key});
 
   @override
   _ChangePasswordPageState createState() => _ChangePasswordPageState();

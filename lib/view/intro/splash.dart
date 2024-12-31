@@ -6,7 +6,7 @@ import 'package:fundorex/view/utils/others_helper.dart';
 import 'package:fundorex/view/utils/responsive.dart';
 
 class SplashScreen extends StatelessWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

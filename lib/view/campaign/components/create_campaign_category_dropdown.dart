@@ -6,7 +6,7 @@ import 'package:fundorex/view/utils/others_helper.dart';
 import 'package:provider/provider.dart';
 
 class CreateCampaignCategoryDropdown extends StatelessWidget {
-  const CreateCampaignCategoryDropdown({Key? key}) : super(key: key);
+  const CreateCampaignCategoryDropdown({super.key});
 
   @override
   Widget build(BuildContext context) {

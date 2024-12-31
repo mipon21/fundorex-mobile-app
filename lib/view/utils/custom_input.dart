@@ -20,7 +20,7 @@ class CustomInput extends StatelessWidget {
   int? minLines;
 
   CustomInput({
-    Key? key,
+    super.key,
     required this.hintText,
     this.onChanged,
     this.textInputAction = TextInputAction.next,
@@ -36,7 +36,7 @@ class CustomInput extends StatelessWidget {
     this.paddingVertical = 18,
     this.maxLines,
     this.minLines,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

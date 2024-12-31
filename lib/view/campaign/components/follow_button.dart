@@ -7,8 +7,8 @@ import 'package:provider/provider.dart';
 
 class FollowButton extends StatelessWidget {
   const FollowButton({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

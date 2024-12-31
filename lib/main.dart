@@ -70,7 +70,7 @@ void main() async {
 int? userId;
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +104,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => FeaturedCampaignService()),
         ChangeNotifierProvider(create: (_) => CategoryService()),
         ChangeNotifierProvider(create: (_) => RecentCampaignService()),
-        ChangeNotifierProvider(create: (_) => CampaignDetailsService()),
+        ChangeNotifierProvider(create: (context) => CampaignDetailsService()),
         ChangeNotifierProvider(create: (_) => DashboardService()),
         ChangeNotifierProvider(create: (_) => AllDonationsService()),
         ChangeNotifierProvider(create: (_) => RelatedCampaignService()),
@@ -128,7 +128,7 @@ class MyApp extends StatelessWidget {
       ],
       child: Consumer<RtlService>(
         builder: (context, rtlP, child) => MaterialApp(
-          title: 'Fundorex',
+          title: 'OnHelpingHand',
           debugShowCheckedModeBanner: false,
           localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
@@ -136,14 +136,14 @@ class MyApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: const [Locale('en', "GB")],
-          builder: (context, rtlchild) {
-            return Directionality(
-              textDirection: rtlP.direction == 'ltr'
-                  ? TextDirection.ltr
-                  : TextDirection.rtl,
-              child: rtlchild!,
-            );
-          },
+          // builder: (context, rtlchild) {
+          //   return Directionality(
+          //     textDirection: rtlP.direction == 'ltr'
+          //         ? TextDirection.ltr
+          //         : TextDirection.rtl,
+          //     child: rtlchild!,
+          //   );
+          // },
           theme: ThemeData(
             primarySwatch: Colors.blue,
             scaffoldBackgroundColor: cc.white,

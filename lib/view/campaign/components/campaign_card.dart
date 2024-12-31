@@ -16,7 +16,7 @@ import '../../utils/constant_colors.dart';
 
 class CampaignCard extends StatelessWidget {
   const CampaignCard({
-    Key? key,
+    super.key,
     required this.imageLink,
     required this.title,
     required this.width,
@@ -27,7 +27,7 @@ class CampaignCard extends StatelessWidget {
     required this.goalAmount,
     this.buttonText = 'Donate',
     required this.remainingTime,
-  }) : super(key: key);
+  });
 
   final camapaignId;
   final imageLink;

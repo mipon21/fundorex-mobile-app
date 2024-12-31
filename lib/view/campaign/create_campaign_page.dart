@@ -13,7 +13,7 @@ import 'package:fundorex/view/utils/textarea_field.dart';
 import 'package:provider/provider.dart';
 
 class CreateCampaignPage extends StatefulWidget {
-  const CreateCampaignPage({Key? key}) : super(key: key);
+  const CreateCampaignPage({super.key});
 
   @override
   State<CreateCampaignPage> createState() => _CreateCampaignPageState();

@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class AllEventsPage extends StatefulWidget {
-  const AllEventsPage({Key? key}) : super(key: key);
+  const AllEventsPage({super.key});
 
   @override
   State<AllEventsPage> createState() => _AllEventsPageState();

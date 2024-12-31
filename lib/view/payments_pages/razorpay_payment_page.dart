@@ -14,13 +14,12 @@ import '../utils/others_helper.dart';
 
 class RazorpayPaymentPage extends StatefulWidget {
   const RazorpayPaymentPage(
-      {Key? key,
+      {super.key,
       required this.amount,
       required this.name,
       required this.phone,
       required this.email,
-      required this.isFromEventBook})
-      : super(key: key);
+      required this.isFromEventBook});
 
   final amount;
   final name;

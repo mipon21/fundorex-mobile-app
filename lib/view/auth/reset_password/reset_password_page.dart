@@ -8,7 +8,7 @@ import 'package:fundorex/view/utils/common_styles.dart';
 import 'package:provider/provider.dart';
 
 class ResetPasswordPage extends StatefulWidget {
-  const ResetPasswordPage({Key? key, required this.email}) : super(key: key);
+  const ResetPasswordPage({super.key, required this.email});
 
   final email;
 

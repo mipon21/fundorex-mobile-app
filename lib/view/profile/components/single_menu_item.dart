@@ -6,11 +6,11 @@ import 'package:provider/provider.dart';
 
 class SingleMenuItem extends StatelessWidget {
   const SingleMenuItem({
-    Key? key,
+    super.key,
     required this.cc,
     required this.iconSvg,
     required this.title,
-  }) : super(key: key);
+  });
 
   final ConstantColors cc;
   final iconSvg;

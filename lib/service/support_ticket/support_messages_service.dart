@@ -113,7 +113,7 @@ class SupportMessagesService with ChangeNotifier {
     dio.options.headers['Content-Type'] = 'multipart/form-data';
     dio.options.headers['Accept'] = 'application/json';
     dio.options.headers['Authorization'] = "Bearer $token";
-    var formData;
+    FormData formData;
     if (filePath != null) {
       formData = FormData.fromMap({
         'type': 'customer',

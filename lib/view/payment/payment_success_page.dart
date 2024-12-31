@@ -12,8 +12,7 @@ import 'package:provider/provider.dart';
 
 class PaymentSuccessPage extends StatelessWidget {
   final paymentFailed;
-  const PaymentSuccessPage({this.paymentFailed = false, Key? key})
-      : super(key: key);
+  const PaymentSuccessPage({this.paymentFailed = false, super.key});
 
   @override
   Widget build(BuildContext context) {

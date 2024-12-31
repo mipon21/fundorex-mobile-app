@@ -11,11 +11,11 @@ import 'package:provider/provider.dart';
 
 class Categories extends StatelessWidget {
   const Categories({
-    Key? key,
+    super.key,
     required this.cc,
     required this.width,
     required this.marginRight,
-  }) : super(key: key);
+  });
   final ConstantColors cc;
 
   final double width;

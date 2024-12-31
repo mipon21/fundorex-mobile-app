@@ -12,7 +12,7 @@ import 'package:fundorex/view/utils/textarea_field.dart';
 import 'package:provider/provider.dart';
 
 class ReedemPointPopup extends StatefulWidget {
-  const ReedemPointPopup({Key? key}) : super(key: key);
+  const ReedemPointPopup({super.key});
 
   @override
   State<ReedemPointPopup> createState() => _ReedemPointPopupState();

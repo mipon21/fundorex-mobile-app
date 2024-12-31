@@ -14,7 +14,7 @@ import 'package:fundorex/view/utils/common_styles.dart';
 import 'package:provider/provider.dart';
 
 class Homepage extends StatefulWidget {
-  const Homepage({Key? key}) : super(key: key);
+  const Homepage({super.key});
 
   @override
   State<Homepage> createState() => _HomepageState();
@@ -108,7 +108,7 @@ class _HomepageState extends State<Homepage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CommonHelper().titleCommon("Hello! 👋"),
-                          CommonHelper().titleCommon("Welcome to Fundorex"),
+                          CommonHelper().titleCommon("Welcome to OnHelping Hand"),
                         ],
                       ),
                     ),

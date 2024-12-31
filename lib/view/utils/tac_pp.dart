@@ -14,13 +14,13 @@ class TacPp extends StatelessWidget {
   final String tTitle;
 
   const TacPp({
-    Key? key,
+    super.key,
     required this.valueListenable,
     required this.pTitle,
     required this.pData,
     required this.tData,
     required this.tTitle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

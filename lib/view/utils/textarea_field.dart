@@ -3,8 +3,7 @@ import 'package:fundorex/view/utils/constant_colors.dart';
 
 class TextareaField extends StatelessWidget {
   const TextareaField(
-      {Key? key, required this.controller, required this.hintText})
-      : super(key: key);
+      {super.key, required this.controller, required this.hintText});
   final controller;
   final hintText;
 

@@ -10,7 +10,7 @@ import 'package:fundorex/view/utils/responsive.dart';
 import 'package:provider/provider.dart';
 
 class FollowedUserListPage extends StatelessWidget {
-  const FollowedUserListPage({Key? key}) : super(key: key);
+  const FollowedUserListPage({super.key});
 
   @override
   Widget build(BuildContext context) {

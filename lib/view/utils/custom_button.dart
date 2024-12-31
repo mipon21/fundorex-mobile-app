@@ -12,7 +12,7 @@ class CustomButton extends StatelessWidget {
   final Color? foregroundColor;
 
   const CustomButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.btText,
     required this.isLoading,
@@ -20,7 +20,7 @@ class CustomButton extends StatelessWidget {
     this.width,
     this.backgroundColor,
     this.foregroundColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,20 +36,20 @@ class CustomButton extends StatelessWidget {
                     onPressed!();
                   },
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.resolveWith((states) {
-            if (states.contains(MaterialState.disabled)) {
+          backgroundColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.disabled)) {
               return cc.primaryColor.withOpacity(.05);
             }
-            if (states.contains(MaterialState.pressed)) {
+            if (states.contains(WidgetState.pressed)) {
               return cc.black3;
             }
             return backgroundColor ?? cc.primaryColor;
           }),
-          foregroundColor: MaterialStateProperty.resolveWith((states) {
-            if (states.contains(MaterialState.disabled)) {
+          foregroundColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.disabled)) {
               return cc.black5;
             }
-            if (states.contains(MaterialState.pressed)) {
+            if (states.contains(WidgetState.pressed)) {
               return foregroundColor ?? cc.white;
             }
             return foregroundColor ?? cc.white;

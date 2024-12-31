@@ -15,7 +15,7 @@ import 'package:fundorex/view/utils/responsive.dart';
 import 'package:provider/provider.dart';
 
 class RewardPointsPage extends StatelessWidget {
-  const RewardPointsPage({Key? key}) : super(key: key);
+  const RewardPointsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

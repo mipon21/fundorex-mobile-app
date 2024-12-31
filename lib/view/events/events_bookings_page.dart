@@ -12,7 +12,7 @@ import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class EventsBookingsPage extends StatelessWidget {
-  const EventsBookingsPage({Key? key}) : super(key: key);
+  const EventsBookingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

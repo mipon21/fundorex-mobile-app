@@ -17,7 +17,7 @@ import 'package:fundorex/view/utils/responsive.dart';
 import 'package:provider/provider.dart';
 
 class DescTab extends StatefulWidget {
-  const DescTab({Key? key}) : super(key: key);
+  const DescTab({super.key});
 
   @override
   State<DescTab> createState() => _DescTabState();
@@ -281,10 +281,10 @@ class _DescTabState extends State<DescTab> with TickerProviderStateMixin {
 
 class TimerCard extends StatelessWidget {
   const TimerCard({
-    Key? key,
+    super.key,
     required this.i,
     required this.time,
-  }) : super(key: key);
+  });
 
   final int i;
   final time;
@@ -311,7 +311,7 @@ class TimerCard extends StatelessWidget {
         style: const TextStyle(
             color: Colors.white, fontSize: 17, fontWeight: FontWeight.bold),
       ),
-      sizedBoxCustom(3),
+      sizedBoxCustom(2),
       AutoSizeText(
         lnProvider.getString(CampaignHelper().timeCardTitle[i]),
         maxLines: 1,

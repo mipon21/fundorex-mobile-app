@@ -9,7 +9,7 @@ import 'package:fundorex/view/utils/textarea_field.dart';
 import 'package:provider/provider.dart';
 
 class CreateTicketPage extends StatefulWidget {
-  const CreateTicketPage({Key? key}) : super(key: key);
+  const CreateTicketPage({super.key});
 
   @override
   _CreateTicketPageState createState() => _CreateTicketPageState();

@@ -11,8 +11,7 @@ import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class TicketChatPage extends StatefulWidget {
-  const TicketChatPage({Key? key, required this.title, required this.ticketId})
-      : super(key: key);
+  const TicketChatPage({super.key, required this.title, required this.ticketId});
 
   final String title;
   final ticketId;
@@ -359,6 +358,8 @@ class _TicketChatPageState extends State<TicketChatPage> {
                                   Colors.black);
                             }
                           },
+                          backgroundColor: cc.primaryColor,
+                          elevation: 0,
                           child: provider.sendLoading == false
                               ? const Icon(
                                   Icons.send,
@@ -373,8 +374,6 @@ class _TicketChatPageState extends State<TicketChatPage> {
                                     strokeWidth: 1.5,
                                   ),
                                 ),
-                          backgroundColor: cc.primaryColor,
-                          elevation: 0,
                         ),
                       ],
                     ),

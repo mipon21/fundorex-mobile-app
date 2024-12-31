@@ -11,8 +11,8 @@ import 'package:provider/provider.dart';
 
 class DashboardCards extends StatelessWidget {
   const DashboardCards({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

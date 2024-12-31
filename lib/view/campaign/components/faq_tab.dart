@@ -5,7 +5,7 @@ import 'package:fundorex/view/utils/constant_colors.dart';
 import 'package:provider/provider.dart';
 
 class FaqTab extends StatelessWidget {
-  const FaqTab({Key? key}) : super(key: key);
+  const FaqTab({super.key});
 
   @override
   Widget build(BuildContext context) {

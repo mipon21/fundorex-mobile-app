@@ -14,13 +14,13 @@ import '../../utils/common_styles.dart';
 
 class PeopleDonatedList extends StatelessWidget {
   const PeopleDonatedList({
-    Key? key,
+    super.key,
     required this.cc,
     required this.width,
     required this.marginRight,
     required this.provider,
     this.campaignId,
-  }) : super(key: key);
+  });
   final ConstantColors cc;
 
   final double width;
@@ -94,13 +94,13 @@ class PeopleDonatedList extends StatelessWidget {
 
 class DonatorCard extends StatelessWidget {
   const DonatorCard({
-    Key? key,
+    super.key,
     required this.width,
     required this.marginRight,
     required this.cc,
     required this.element,
     required this.i,
-  }) : super(key: key);
+  });
 
   final double width;
   final double marginRight;

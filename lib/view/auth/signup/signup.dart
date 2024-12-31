@@ -16,7 +16,7 @@ import '../login/login.dart';
 import 'components/email_name_fields.dart';
 
 class SignupPage extends StatefulWidget {
-  const SignupPage({Key? key, this.hasBackButton = true}) : super(key: key);
+  const SignupPage({super.key, this.hasBackButton = true});
 
   final hasBackButton;
 

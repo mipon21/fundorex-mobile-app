@@ -37,7 +37,7 @@ class DonationDetails extends StatelessWidget {
                   ConstStyles().detailsPanelRowWithDollar(
                       ln.getString('Donation'),
                       0,
-                      provider.donationAmount.toStringAsFixed(1)),
+                      provider.donationAmount.toStringAsFixed(0)),
 
                   sizedBoxCustom(13),
 

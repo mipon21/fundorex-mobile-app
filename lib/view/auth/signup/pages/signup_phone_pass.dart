@@ -11,11 +11,10 @@ import 'package:provider/provider.dart';
 
 class SignupPhonePass extends StatefulWidget {
   const SignupPhonePass(
-      {Key? key,
+      {super.key,
       required this.passController,
       required this.phoneController,
-      required this.confirmPassController})
-      : super(key: key);
+      required this.confirmPassController});
 
   final passController;
   final confirmPassController;

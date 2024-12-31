@@ -9,8 +9,7 @@ import 'package:fundorex/view/utils/common_styles.dart';
 import 'package:provider/provider.dart';
 
 class UploadCampaignImages extends StatefulWidget {
-  const UploadCampaignImages({Key? key, required this.networkImage})
-      : super(key: key);
+  const UploadCampaignImages({super.key, required this.networkImage});
 
   @override
   State<UploadCampaignImages> createState() => _UploadCampaignImagesState();

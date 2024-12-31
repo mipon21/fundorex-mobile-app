@@ -13,7 +13,7 @@ import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class DonationsListPage extends StatelessWidget {
-  const DonationsListPage({Key? key}) : super(key: key);
+  const DonationsListPage({super.key});
 
   @override
   Widget build(BuildContext context) {

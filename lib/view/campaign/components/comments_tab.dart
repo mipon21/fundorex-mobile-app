@@ -6,8 +6,8 @@ import 'package:provider/provider.dart';
 
 class CommentsTab extends StatelessWidget {
   const CommentsTab({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

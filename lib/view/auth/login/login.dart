@@ -78,8 +78,10 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(
                           height: 60,
                         ),
-                        CommonHelper()
-                            .titleCommon(ln.getString("Welcome back! Login")),
+                        Text("Welcome back! Login", style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold
+                        ),),
 
                         const SizedBox(
                           height: 33,
@@ -393,21 +395,21 @@ class _LoginPageState extends State<LoginPage> {
                           )
                         ],
                         const SizedBox(height: 20),
-                        Consumer<FacebookLoginService>(
-                          builder: (context, fProvider, child) => InkWell(
-                            onTap: () {
-                              if (fProvider.isloading == false) {
-                                fProvider.checkIfLoggedIn(context);
-                              }
-                            },
-                            child: LoginHelper().commonButton(
-                                'assets/icons/facebook.png',
-                                ln.getString("Sign in with Facebook"),
-                                isloading: fProvider.isloading == false
-                                    ? false
-                                    : true),
-                          ),
-                        ),
+                        // Consumer<FacebookLoginService>(
+                        //   builder: (context, fProvider, child) => InkWell(
+                        //     onTap: () {
+                        //       if (fProvider.isloading == false) {
+                        //         fProvider.checkIfLoggedIn(context);
+                        //       }
+                        //     },
+                        //     child: LoginHelper().commonButton(
+                        //         'assets/icons/facebook.png',
+                        //         ln.getString("Sign in with Facebook"),
+                        //         isloading: fProvider.isloading == false
+                        //             ? false
+                        //             : true),
+                        //   ),
+                        // ),
 
                         const SizedBox(
                           height: 60,

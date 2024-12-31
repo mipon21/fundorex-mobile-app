@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fundorex/service/donate_service.dart';
 import 'package:fundorex/service/event_book_pay_service.dart';
-import 'package:fundorex/service/profile_service.dart';
 import 'package:fundorex/view/payments_pages/paystack_payment_page.dart';
 import 'package:provider/provider.dart';
 

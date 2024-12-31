@@ -14,7 +14,7 @@ import 'package:provider/provider.dart';
 
 class EditCampaignPage extends StatefulWidget {
   const EditCampaignPage(
-      {Key? key,
+      {super.key,
       required this.initialTitle,
       required this.initialDesc,
       required this.initialAmount,
@@ -22,8 +22,7 @@ class EditCampaignPage extends StatefulWidget {
       required this.initialDate,
       required this.initialImage,
       required this.initialFQA,
-      required this.campaignId})
-      : super(key: key);
+      required this.campaignId});
 
   final initialTitle;
   final initialDesc;

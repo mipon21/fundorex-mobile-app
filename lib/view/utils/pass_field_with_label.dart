@@ -17,7 +17,7 @@ class PassFieldWithLabel extends StatelessWidget {
   final controller;
   final valueListenable;
   const PassFieldWithLabel({
-    Key? key,
+    super.key,
     required this.label,
     required this.hintText,
     this.initialValue,
@@ -29,7 +29,7 @@ class PassFieldWithLabel extends StatelessWidget {
     this.svgPrefix,
     this.controller,
     this.valueListenable,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

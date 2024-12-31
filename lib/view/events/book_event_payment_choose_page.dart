@@ -22,8 +22,7 @@ import 'package:provider/provider.dart';
 import '../utils/tac_pp.dart';
 
 class BookEventPagePaymentChoosePage extends StatefulWidget {
-  const BookEventPagePaymentChoosePage({Key? key, required this.eventId})
-      : super(key: key);
+  const BookEventPagePaymentChoosePage({super.key, required this.eventId});
 
   final eventId;
 

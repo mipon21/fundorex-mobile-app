@@ -39,7 +39,7 @@ class AppStringService with ChangeNotifier {
       tStrings = jsonDecode(response.body)['strings'];
       notifyListeners();
     } else {
-      print('error fetching translations ' + response.body);
+      print('error fetching translations ${response.body}');
       notifyListeners();
     }
   }

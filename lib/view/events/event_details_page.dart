@@ -23,7 +23,7 @@ import 'package:provider/provider.dart';
 import '../utils/common_styles.dart';
 
 class EventDetailsPage extends StatefulWidget {
-  const EventDetailsPage({Key? key}) : super(key: key);
+  const EventDetailsPage({super.key});
 
   @override
   State<EventDetailsPage> createState() => _EventDetailsPageState();
@@ -401,10 +401,10 @@ class _EventDetailsPageState extends State<EventDetailsPage>
 
 class TimerCard extends StatelessWidget {
   const TimerCard({
-    Key? key,
+    super.key,
     required this.i,
     required this.time,
-  }) : super(key: key);
+  });
 
   final int i;
   final time;

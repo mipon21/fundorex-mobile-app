@@ -5,7 +5,6 @@ import 'package:fundorex/model/ticket_list_model.dart';
 import 'package:fundorex/service/common_service.dart';
 import 'package:fundorex/service/support_ticket/support_messages_service.dart';
 import 'package:fundorex/view/supports/ticket_chat_page.dart';
-import 'package:fundorex/view/utils/others_helper.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';

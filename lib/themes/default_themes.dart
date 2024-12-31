@@ -6,13 +6,13 @@ import '../view/utils/constant_colors.dart';
 class DefaultThemes {
   InputDecorationTheme? inputDecorationTheme(BuildContext context) =>
       InputDecorationTheme(
-          hintStyle: MaterialStateTextStyle.resolveWith((states) {
+          hintStyle: WidgetStateTextStyle.resolveWith((states) {
             return Theme.of(context).textTheme.titleSmall!.copyWith(
                   color: cc.black5,
                 );
           }),
-          counterStyle: MaterialStateTextStyle.resolveWith((states) {
-            if (states.contains(MaterialState.focused)) {
+          counterStyle: WidgetStateTextStyle.resolveWith((states) {
+            if (states.contains(WidgetState.focused)) {
               return Theme.of(context)
                   .textTheme
                   .titleSmall!
@@ -40,11 +40,11 @@ class DefaultThemes {
               borderSide: BorderSide(color: ConstantColors().warningColor)),
           focusedErrorBorder: OutlineInputBorder(
               borderSide: BorderSide(color: ConstantColors().primaryColor)),
-          prefixIconColor: MaterialStateColor.resolveWith((states) {
-            if (states.contains(MaterialState.focused)) {
+          prefixIconColor: WidgetStateColor.resolveWith((states) {
+            if (states.contains(WidgetState.focused)) {
               return cc.primaryColor;
             }
-            if (states.contains(MaterialState.error)) {
+            if (states.contains(WidgetState.error)) {
               return cc.warningColor;
             }
             return cc.black5;
@@ -56,8 +56,8 @@ class DefaultThemes {
           width: 2,
           color: cc.black7,
         ),
-        fillColor: MaterialStateColor.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        fillColor: WidgetStateColor.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return cc.primaryColor;
           }
           return cc.white;
@@ -71,8 +71,8 @@ class DefaultThemes {
       );
   RadioThemeData? radioThemeData(dProvider) => RadioThemeData(
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        fillColor: MaterialStateColor.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        fillColor: WidgetStateColor.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return dProvider.secondaryColor;
           }
           return cc.white;
@@ -84,13 +84,13 @@ class DefaultThemes {
       OutlinedButtonThemeData(
           style: ButtonStyle(
         overlayColor:
-            MaterialStateColor.resolveWith((states) => Colors.transparent),
-        shape: MaterialStateProperty.resolveWith<OutlinedBorder?>((states) {
+            WidgetStateColor.resolveWith((states) => Colors.transparent),
+        shape: WidgetStateProperty.resolveWith<OutlinedBorder?>((states) {
           return RoundedRectangleBorder(borderRadius: BorderRadius.circular(8));
           // }
         }),
-        side: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.pressed)) {
+        side: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.pressed)) {
             return BorderSide(
               color: cc.primaryColor,
             );
@@ -99,10 +99,10 @@ class DefaultThemes {
             color: cc.black8,
           );
         }),
-        textStyle: MaterialStateProperty.resolveWith((states) =>
+        textStyle: WidgetStateProperty.resolveWith((states) =>
             context.titleMedium!.copyWith(fontWeight: FontWeight.w600)),
-        foregroundColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.pressed)) {
+        foregroundColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.pressed)) {
             return cc.primaryColor;
           }
           return cc.black5;
@@ -112,32 +112,32 @@ class DefaultThemes {
   ElevatedButtonThemeData? elevatedButtonTheme(BuildContext context) =>
       ElevatedButtonThemeData(
           style: ButtonStyle(
-        elevation: MaterialStateProperty.resolveWith((states) => 0),
+        elevation: WidgetStateProperty.resolveWith((states) => 0),
         overlayColor:
-            MaterialStateColor.resolveWith((states) => Colors.transparent),
-        shape: MaterialStateProperty.resolveWith<OutlinedBorder?>((states) {
+            WidgetStateColor.resolveWith((states) => Colors.transparent),
+        shape: WidgetStateProperty.resolveWith<OutlinedBorder?>((states) {
           return RoundedRectangleBorder(borderRadius: BorderRadius.circular(8));
           // }
         }),
-        backgroundColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.disabled)) {
+        backgroundColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.disabled)) {
             return cc.primaryColor.withOpacity(.05);
           }
-          if (states.contains(MaterialState.pressed)) {
+          if (states.contains(WidgetState.pressed)) {
             return cc.black3;
           }
           return cc.primaryColor;
         }),
-        textStyle: MaterialStateProperty.resolveWith((states) =>
+        textStyle: WidgetStateProperty.resolveWith((states) =>
             Theme.of(context)
                 .textTheme
                 .titleMedium!
                 .copyWith(fontWeight: FontWeight.w600)),
-        foregroundColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.disabled)) {
+        foregroundColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.disabled)) {
             return cc.black5;
           }
-          if (states.contains(MaterialState.pressed)) {
+          if (states.contains(WidgetState.pressed)) {
             return cc.white;
           }
           return cc.white;
@@ -146,22 +146,22 @@ class DefaultThemes {
   TextButtonThemeData? textButtonThemeData(BuildContext context) =>
       TextButtonThemeData(
           style: ButtonStyle(
-              elevation: MaterialStateProperty.resolveWith((states) => 0),
-              overlayColor: MaterialStateColor.resolveWith(
+              elevation: WidgetStateProperty.resolveWith((states) => 0),
+              overlayColor: WidgetStateColor.resolveWith(
                   (states) => Colors.transparent),
-              backgroundColor: MaterialStateProperty.resolveWith((states) {
+              backgroundColor: WidgetStateProperty.resolveWith((states) {
                 return cc.black3.withOpacity(0.0);
               }),
-              foregroundColor: MaterialStateProperty.resolveWith((states) {
-                if (states.contains(MaterialState.disabled)) {
+              foregroundColor: WidgetStateProperty.resolveWith((states) {
+                if (states.contains(WidgetState.disabled)) {
                   return cc.black5;
                 }
-                if (states.contains(MaterialState.pressed)) {
+                if (states.contains(WidgetState.pressed)) {
                   return cc.black3;
                 }
                 return cc.black3;
               }),
-              textStyle: MaterialStateProperty.resolveWith((states) =>
+              textStyle: WidgetStateProperty.resolveWith((states) =>
                   Theme.of(context)
                       .textTheme
                       .titleMedium
@@ -219,22 +219,22 @@ class DefaultThemes {
 
 SwitchThemeData switchThemeData() => SwitchThemeData(
       thumbColor:
-          MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
-        if (states.contains(MaterialState.disabled)) {
+          WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.disabled)) {
           return cc.primaryColor.withOpacity(.10);
         }
         return cc.white;
       }),
       trackColor:
-          MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
-        if (!states.contains(MaterialState.selected)) {
+          WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (!states.contains(WidgetState.selected)) {
           return cc.black8;
         }
         return cc.primaryColor.withOpacity(.60);
       }),
       trackOutlineColor:
-          MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
-        if (!states.contains(MaterialState.selected)) {
+          WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (!states.contains(WidgetState.selected)) {
           return cc.black8;
         }
         return cc.primaryColor.withOpacity(.40);
@@ -242,13 +242,13 @@ SwitchThemeData switchThemeData() => SwitchThemeData(
     );
 
 ScrollbarThemeData scrollbarTheme() => ScrollbarThemeData(
-      thumbVisibility: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.scrolledUnder)) {
+      thumbVisibility: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.scrolledUnder)) {
           return true;
         }
         return false;
       }),
-      thickness: MaterialStateProperty.resolveWith((states) => 6),
-      thumbColor: MaterialStateProperty.resolveWith(
+      thickness: WidgetStateProperty.resolveWith((states) => 6),
+      thumbColor: WidgetStateProperty.resolveWith(
           (states) => cc.primaryColor.withOpacity(.60)),
     );

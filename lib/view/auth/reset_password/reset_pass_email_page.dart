@@ -7,7 +7,7 @@ import 'package:fundorex/view/utils/custom_input.dart';
 import 'package:provider/provider.dart';
 
 class ResetPassEmailPage extends StatefulWidget {
-  const ResetPassEmailPage({Key? key}) : super(key: key);
+  const ResetPassEmailPage({super.key});
 
   @override
   _ResetPassEmailPageState createState() => _ResetPassEmailPageState();

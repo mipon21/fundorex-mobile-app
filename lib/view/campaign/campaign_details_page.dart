@@ -27,9 +27,9 @@ import '../auth/login/login.dart';
 
 class CampaignDetailsPage extends StatefulWidget {
   const CampaignDetailsPage({
-    Key? key,
+    super.key,
     required this.campaignId,
-  }) : super(key: key);
+  });
 
   final campaignId;
 
@@ -104,7 +104,7 @@ class _CampaignDetailsPageState extends State<CampaignDetailsPage>
                               children: [
                                 sizedBoxCustom(14),
                                 Text(
-                                  provider.campaignDetails.title ?? '',
+                                  provider.campaignDetails.title,
                                   style: TextStyle(
                                       color: cc.greyFour,
                                       fontSize: 18,

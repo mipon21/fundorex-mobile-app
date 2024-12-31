@@ -18,7 +18,7 @@ import 'package:top_snackbar_flutter/top_snack_bar.dart';
 import '../auth/signup/components/country_states_dropdowns.dart';
 
 class ProfileEditPage extends StatefulWidget {
-  const ProfileEditPage({Key? key}) : super(key: key);
+  const ProfileEditPage({super.key});
 
   @override
   State<ProfileEditPage> createState() => _ProfileEditPageState();

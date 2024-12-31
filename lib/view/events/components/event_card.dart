@@ -8,7 +8,7 @@ import 'package:fundorex/view/utils/constant_colors.dart';
 
 class EventCard extends StatelessWidget {
   const EventCard({
-    Key? key,
+    super.key,
     required this.imageLink,
     required this.title,
     required this.buttonText,
@@ -18,7 +18,7 @@ class EventCard extends StatelessWidget {
     required this.eventId,
     required this.date,
     required this.location,
-  }) : super(key: key);
+  });
 
   final eventId;
   final imageLink;

@@ -9,7 +9,7 @@ import 'package:fundorex/view/utils/pass_field_with_label.dart';
 
 class AccountDeleteView extends StatelessWidget {
   static const routeName = "account_delete";
-  const AccountDeleteView({Key? key}) : super(key: key);
+  const AccountDeleteView({super.key});
 
   @override
   Widget build(BuildContext context) {

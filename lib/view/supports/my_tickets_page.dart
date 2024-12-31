@@ -15,7 +15,7 @@ import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class MyTicketsPage extends StatefulWidget {
-  const MyTicketsPage({Key? key}) : super(key: key);
+  const MyTicketsPage({super.key});
 
   @override
   _MyTicketsPageState createState() => _MyTicketsPageState();

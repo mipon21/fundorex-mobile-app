@@ -6,6 +6,7 @@ import 'package:flutterzilla_fixed_grid/flutterzilla_fixed_grid.dart';
 import 'package:fundorex/helper/extension/context_extension.dart';
 import 'package:fundorex/helper/extension/int_extension.dart';
 import 'package:fundorex/helper/extension/string_extension.dart';
+import 'package:fundorex/main.dart';
 import 'package:fundorex/service/app_string_service.dart';
 import 'package:fundorex/service/campaign_details_service.dart';
 import 'package:fundorex/service/donate_service.dart';
@@ -13,6 +14,7 @@ import 'package:fundorex/service/pay_services/bank_transfer_service.dart';
 import 'package:fundorex/service/pay_services/payment_choose_service.dart';
 import 'package:fundorex/service/profile_service.dart';
 import 'package:fundorex/service/rtl_service.dart';
+import 'package:fundorex/view/auth/login/login.dart';
 import 'package:fundorex/view/payment/components/donation_details.dart';
 import 'package:fundorex/view/utils/common_helper.dart';
 import 'package:fundorex/view/utils/constant_colors.dart';
@@ -25,8 +27,7 @@ import '../../service/pay_services/payment_constants.dart';
 import '../utils/tac_pp.dart';
 
 class DonationPaymentChoosePage extends StatefulWidget {
-  const DonationPaymentChoosePage({Key? key, required this.campaignId})
-      : super(key: key);
+  const DonationPaymentChoosePage({super.key, required this.campaignId});
 
   final campaignId;
 
@@ -245,111 +246,142 @@ class _DonationPaymentChoosePageState extends State<DonationPaymentChoosePage> {
                                       : Container(),
 
                                   sizedBoxCustom(20),
-                                  //Name ============>
-                                  CommonHelper()
-                                      .labelCommon("Or enter an amount"),
-
-                                  CustomInput(
-                                    controller: customAmountController,
-                                    hintText: "Amount",
-                                    textInputAction: TextInputAction.next,
-                                    isNumberField: true,
-                                    paddingHorizontal: 20,
-                                    onChanged: (v) {
-                                      print(v);
-                                      amountIndex = -1;
-                                      if (v.isNotEmpty) {
-                                        dProvider.setDonationAmount(v);
-                                      } else {
-                                        OthersHelper().showToast(
-                                            ln.getString(
-                                                'Amount must be greater than zero'),
-                                            cc.warningColor);
-                                      }
-                                    },
-                                  ),
-                                  const SizedBox(
-                                    height: 8,
-                                  ),
-
-                                  //Name ============>
-                                  CommonHelper().labelCommon("Name"),
-
-                                  CustomInput(
-                                    controller: nameController,
-                                    validation: (value) {
-                                      if (value == null || value.isEmpty) {
-                                        return ln.getString(
-                                            'Please enter your name');
-                                      }
-                                      return null;
-                                    },
-                                    hintText: ln.getString("Name"),
-                                    textInputAction: TextInputAction.next,
-                                    paddingHorizontal: 20,
-                                  ),
-                                  const SizedBox(
-                                    height: 8,
-                                  ),
-
-                                  //Name ============>
-                                  CommonHelper().labelCommon("Email"),
-
-                                  CustomInput(
-                                    controller: emailController,
-                                    validation: (value) {
-                                      if (value == null || value.isEmpty) {
-                                        return ln.getString(
-                                            'Please enter your email');
-                                      }
-                                      return null;
-                                    },
-                                    hintText: ln.getString("Email"),
-                                    textInputAction: TextInputAction.next,
-                                    paddingHorizontal: 20,
-                                    marginBottom: 10,
-                                  ),
-                                  CommonHelper().labelCommon("Phone"),
-
-                                  CustomInput(
-                                    controller: phoneController,
-                                    validation: (value) {
-                                      if (value == null || value.isEmpty) {
-                                        return ln.getString(
-                                            'Please enter your phone');
-                                      }
-                                      return null;
-                                    },
-                                    hintText: ln.getString("Phone"),
-                                    textInputAction: TextInputAction.next,
-                                    paddingHorizontal: 20,
-                                    marginBottom: 10,
-                                  ),
-
-                                  CheckboxListTile(
-                                    checkColor: Colors.white,
-                                    activeColor: ConstantColors().primaryColor,
-                                    contentPadding: const EdgeInsets.all(0),
-                                    title: Container(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 5),
-                                      child: Text(
-                                        ln.getString('Donate anonymously'),
-                                        style: TextStyle(
-                                            color: ConstantColors().greyFour,
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 14),
-                                      ),
-                                    ),
-                                    value: annonymusDonate,
-                                    onChanged: (newValue) {
-                                      setState(() {
-                                        annonymusDonate = !annonymusDonate;
-                                      });
-                                    },
-                                    controlAffinity:
-                                        ListTileControlAffinity.leading,
-                                  ),
+                                  Consumer<ProfileService>(
+                                      builder: (context, ps, child) {
+                                    return 
+                                    Column(
+                                      children: [
+                                        if(ps.profileDetails != null)
+                                        Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            //Name ============>
+                                            
+                                            CommonHelper()
+                                                .labelCommon("Or enter an amount"),
+                                            if (ProfileService().profileDetails ==
+                                                null)
+                                              CustomInput(
+                                                controller: customAmountController,
+                                                hintText: "Amount",
+                                                textInputAction:
+                                                    TextInputAction.next,
+                                                isNumberField: true,
+                                                paddingHorizontal: 20,
+                                                onChanged: (v) {
+                                                  print(v);
+                                                  amountIndex = -1;
+                                                  if (v.isNotEmpty) {
+                                                    dProvider.setDonationAmount(v);
+                                                  } else {
+                                                    OthersHelper().showToast(
+                                                        ln.getString(
+                                                            'Amount must be greater than zero'),
+                                                        cc.warningColor);
+                                                  }
+                                                },
+                                              ),
+                                            const SizedBox(
+                                              height: 8,
+                                            ),
+                                        
+                                            //Name ============>
+                                        
+                                            CommonHelper().labelCommon("Name"),
+                                        
+                                            CustomInput(
+                                              controller: nameController,
+                                              validation: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return ln.getString(
+                                                      'Please enter your name');
+                                                }
+                                                return null;
+                                              },
+                                              hintText: ln.getString("Name"),
+                                              textInputAction: TextInputAction.next,
+                                              paddingHorizontal: 20,
+                                            ),
+                                            const SizedBox(
+                                              height: 8,
+                                            ),
+                                        
+                                            //Name ============>
+                                        
+                                            CommonHelper().labelCommon("Email"),
+                                        
+                                            CustomInput(
+                                              controller: emailController,
+                                              validation: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return ln.getString(
+                                                      'Please enter your email');
+                                                }
+                                                return null;
+                                              },
+                                              hintText: ln.getString("Email"),
+                                              textInputAction: TextInputAction.next,
+                                              paddingHorizontal: 20,
+                                              marginBottom: 10,
+                                            ),
+                                        
+                                            CommonHelper().labelCommon("Phone"),
+                                        
+                                            CustomInput(
+                                              controller: phoneController,
+                                              validation: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return ln.getString(
+                                                      'Please enter your phone');
+                                                }
+                                                return null;
+                                              },
+                                              hintText: ln.getString("Phone"),
+                                              textInputAction: TextInputAction.next,
+                                              paddingHorizontal: 20,
+                                              marginBottom: 10,
+                                            ),
+                                        
+                                            CheckboxListTile(
+                                              checkColor: Colors.white,
+                                              activeColor:
+                                                  ConstantColors().primaryColor,
+                                              contentPadding:
+                                                  const EdgeInsets.all(0),
+                                              title: Container(
+                                                padding: const EdgeInsets.symmetric(
+                                                    vertical: 5),
+                                                child: Text(
+                                                  ln.getString(
+                                                      'Donate anonymously'),
+                                                  style: TextStyle(
+                                                      color:
+                                                          ConstantColors().greyFour,
+                                                      fontWeight: FontWeight.w400,
+                                                      fontSize: 14),
+                                                ),
+                                              ),
+                                              value: annonymusDonate,
+                                              onChanged: (newValue) {
+                                                setState(() {
+                                                  annonymusDonate =
+                                                      !annonymusDonate;
+                                                });
+                                              },
+                                              controlAffinity:
+                                                  ListTileControlAffinity.leading,
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    );
+                                  }),
 
                                   const DonationDetails(),
 
@@ -528,88 +560,132 @@ class _DonationPaymentChoosePageState extends State<DonationPaymentChoosePage> {
                                   const SizedBox(
                                     height: 14,
                                   ),
+                                  Consumer<ProfileService>(
+                                    builder: (context, ps, child) {
+                                      return CommonHelper().buttonPrimary(
+                                        'Pay & Confirm',
+                                        () {
+                                          if (ps.profileDetails == null) {
+                                            'Please Login First'
+                                                .tr()
+                                                .showToast();
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute<void>(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        const LoginPage(
+                                                            shouldPop: true),
+                                              ),
+                                            );
+                                            return;
+                                          }
+                                          // Name validation
 
-                                  CommonHelper().buttonPrimary('Pay & Confirm',
-                                      () {
-                                    if (nameController.text.trim().isEmpty) {
-                                      'Enter your name'.tr().showToast();
+                                          if (nameController.text
+                                              .trim()
+                                              .isEmpty) {
+                                            'Enter your name'.tr().showToast();
+                                            return;
+                                          }
 
-                                      return;
-                                    }
-                                    if (!emailController.text.validateEmail) {
-                                      'Enter a valid email'.tr().showToast();
+                                          // Email validation
+                                          if (!emailController
+                                              .text.validateEmail) {
+                                            'Enter a valid email'
+                                                .tr()
+                                                .showToast();
+                                            return;
+                                          }
 
-                                      return;
-                                    }
-                                    if (phoneController.text.trim().length <
-                                        3) {
-                                      'Enter a valid phone'.tr().showToast();
+                                          // Phone validation
+                                          if (phoneController.text
+                                                  .trim()
+                                                  .length <
+                                              3) {
+                                            'Enter a valid phone'
+                                                .tr()
+                                                .showToast();
+                                            return;
+                                          }
 
-                                      return;
-                                    }
-                                    if (selectedMethod == -1) {
-                                      'Please select a payment method'
-                                          .tr()
-                                          .showToast();
+                                          // Payment method validation
+                                          if (selectedMethod == -1) {
+                                            'Please select a payment method'
+                                                .tr()
+                                                .showToast();
+                                            return;
+                                          }
 
-                                      return;
-                                    }
+                                          // Amount validation
+                                          if (customAmountController
+                                                  .text.isEmpty &&
+                                              amountIndex < 0) {
+                                            'Please enter or select an amount'
+                                                .tr()
+                                                .showToast();
+                                            return;
+                                          }
 
-                                    if (customAmountController.text.isEmpty &&
-                                        amountIndex < 0) {
-                                      'Please enter or select an amount'
-                                          .tr()
-                                          .showToast();
+                                          // Minimum donation amount validation
+                                          if (dProvider.minimumDonateAmount !=
+                                                  0 &&
+                                              num.parse(customAmountController
+                                                      .text) <
+                                                  dProvider
+                                                      .minimumDonateAmount) {
+                                            ('${"Amount must be greater than".tr()} ${dProvider.minimumDonateAmount}')
+                                                .showToast();
+                                            return;
+                                          }
 
-                                      return;
-                                    }
+                                          // Terms and conditions agreement validation
+                                          if (!termsAgree.value) {
+                                            'You must agree with the terms and conditions'
+                                                .tr()
+                                                .showToast();
+                                            return;
+                                          }
 
-                                    if (dProvider.minimumDonateAmount != 0 &&
-                                        (num.parse(
-                                                customAmountController.text) <
-                                            dProvider.minimumDonateAmount)) {
-                                      ('${"Amount must be greater than".tr()} ${dProvider.minimumDonateAmount}')
-                                          .showToast();
+                                          // Loading state check
+                                          if (dProvider.isloading) {
+                                            return;
+                                          } else {
+                                            // Set user details
+                                            dProvider.setUserEnteredNameEmail(
+                                              nameController.text,
+                                              emailController.text,
+                                            );
 
-                                      return;
-                                    }
-
-                                    if (termsAgree.value == false) {
-                                      'You must agree with the terms and conditions'
-                                          .tr()
-                                          .showToast();
-                                      return;
-                                    }
-                                    if (dProvider.isloading == true) {
-                                      return;
-                                    } else {
-                                      dProvider.setUserEnteredNameEmail(
-                                          nameController.text,
-                                          emailController.text);
-                                      payAction(
-                                          pgProvider.paymentList[selectedMethod]
-                                              ['name'],
-                                          context,
-                                          //if user selected bank transfer
-                                          pgProvider.paymentList[selectedMethod]
-                                                      ['name'] ==
-                                                  'manual_payment'
-                                              ? Provider.of<
-                                                          BankTransferService>(
-                                                      context,
-                                                      listen: false)
-                                                  .pickedImage
-                                              : null,
-                                          campaignId: widget.campaignId,
-                                          name: nameController.text.trim(),
-                                          email: emailController.text.trim(),
-                                          phone: phoneController.text.trim(),
-                                          anonymousDonate: annonymusDonate);
-                                    }
-                                  },
-                                      isloading: dProvider.isloading == false
-                                          ? false
-                                          : true),
+                                            // Execute payment action
+                                            payAction(
+                                              pgProvider.paymentList[
+                                                  selectedMethod]['name'],
+                                              context,
+                                              pgProvider.paymentList[
+                                                              selectedMethod]
+                                                          ['name'] ==
+                                                      'manual_payment'
+                                                  ? Provider.of<
+                                                              BankTransferService>(
+                                                          context,
+                                                          listen: false)
+                                                      .pickedImage
+                                                  : null,
+                                              campaignId: widget.campaignId,
+                                              name: nameController.text.trim(),
+                                              email:
+                                                  emailController.text.trim(),
+                                              phone:
+                                                  phoneController.text.trim(),
+                                              anonymousDonate: annonymusDonate,
+                                            );
+                                          }
+                                        },
+                                        isloading: dProvider.isloading,
+                                      );
+                                    },
+                                  ),
 
                                   sizedBoxCustom(40)
                                 ]);

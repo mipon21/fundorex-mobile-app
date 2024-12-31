@@ -8,8 +8,7 @@ import 'package:fundorex/view/utils/others_helper.dart';
 import 'package:provider/provider.dart';
 
 class CountryStatesDropdowns extends StatefulWidget {
-  const CountryStatesDropdowns({Key? key, required this.cityController})
-      : super(key: key);
+  const CountryStatesDropdowns({super.key, required this.cityController});
 
   @override
   State<CountryStatesDropdowns> createState() => _CountryStatesDropdownsState();

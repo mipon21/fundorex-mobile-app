@@ -9,7 +9,7 @@ import 'package:fundorex/view/utils/others_helper.dart';
 import 'package:provider/provider.dart';
 
 class CreateCampaignFAQ extends StatefulWidget {
-  const CreateCampaignFAQ({Key? key}) : super(key: key);
+  const CreateCampaignFAQ({super.key});
 
   @override
   State<CreateCampaignFAQ> createState() => _CreateCampaignFAQState();

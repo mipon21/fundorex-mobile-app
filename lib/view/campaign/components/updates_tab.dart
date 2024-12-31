@@ -7,7 +7,7 @@ import 'package:fundorex/view/utils/common_styles.dart';
 import 'package:provider/provider.dart';
 
 class UpdatesTab extends StatelessWidget {
-  const UpdatesTab({Key? key}) : super(key: key);
+  const UpdatesTab({super.key});
 
   @override
   Widget build(BuildContext context) {

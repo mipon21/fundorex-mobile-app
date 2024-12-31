@@ -13,8 +13,8 @@ import '../../../service/campaign_details_service.dart';
 
 class SliderHome extends StatelessWidget {
   const SliderHome({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

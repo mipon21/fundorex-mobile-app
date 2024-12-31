@@ -72,7 +72,7 @@ class ProfileService with ChangeNotifier {
 
         notifyListeners();
       } else {
-        print('profile fetch error ' + response.body);
+        print('profile fetch error ${response.body}');
         profileDetails == 'error';
         setLoadingFalse();
         notifyListeners();

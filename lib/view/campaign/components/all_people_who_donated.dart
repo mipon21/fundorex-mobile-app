@@ -12,8 +12,8 @@ import '../../utils/common_styles.dart';
 
 class AllPeopleWhoDonated extends StatelessWidget {
   const AllPeopleWhoDonated({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

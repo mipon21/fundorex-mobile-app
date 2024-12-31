@@ -8,7 +8,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fundorex/view/utils/config.dart';
-import '../../view/home/landing_page.dart';
 import '../../view/utils/others_helper.dart';
 import '../common_service.dart';
 import 'package:http/http.dart' as http;

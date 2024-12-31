@@ -15,7 +15,7 @@ import 'package:provider/provider.dart';
 import '../../../service/auth_services/reset_pass_otp_service.dart';
 
 class ResetPassOtpPage extends StatefulWidget {
-  const ResetPassOtpPage({Key? key, required this.email}) : super(key: key);
+  const ResetPassOtpPage({super.key, required this.email});
 
   final email;
 

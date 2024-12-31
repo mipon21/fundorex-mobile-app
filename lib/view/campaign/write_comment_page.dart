@@ -10,9 +10,9 @@ import 'package:provider/provider.dart';
 
 class WriteCommentPage extends StatefulWidget {
   const WriteCommentPage({
-    Key? key,
+    super.key,
     required this.campaignId,
-  }) : super(key: key);
+  });
 
   final campaignId;
   @override

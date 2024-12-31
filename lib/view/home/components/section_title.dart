@@ -7,12 +7,12 @@ import '../../utils/constant_colors.dart';
 
 class SectionTitle extends StatelessWidget {
   const SectionTitle({
-    Key? key,
+    super.key,
     required this.cc,
     required this.title,
     required this.pressed,
     this.hasSeeAllBtn = true,
-  }) : super(key: key);
+  });
 
   final ConstantColors cc;
   final String title;
